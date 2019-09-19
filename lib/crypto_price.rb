@@ -3,7 +3,7 @@ require 'nokogiri'
 require 'pry'
 
 
-require "crypto_price/version"
+require_relative "crypto_price/version"
 
 module CryptoPrice
   class Error < StandardError; end

@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
-require "bundler/setup"
-require "daily_deal"
+#require "bundler/setup"
+require "./lib/crypto_price.rb"
 
-require_relative "../lib/crypto_price"
+
+CryptoPrice::CLI.new.call
