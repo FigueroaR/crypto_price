@@ -1,3 +1,8 @@
+require 'open-uri'
+require 'nokogiri'
+require 'pry'
+
+
 require "crypto_price/version"
 
 module CryptoPrice
