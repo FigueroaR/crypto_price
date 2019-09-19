@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
-require "./lib/crypto_price.rb"
+require "crypto_price"
 
 
 CryptoPrice::CLI.new.call
