@@ -13,8 +13,8 @@ class CryptoPrice::CLI
   puts " Search through all Cryptocurrencies and find the information you want! "
   
   @prices = CryptoPrice::Price.now
-  @prices.each.with_index(1) do |deal, i|
-      puts "#{i}. #{deal.name} - #{deal.price} - #{deal.change} - #{deal.volume} - #{deal.circulatingSupply} - #{deal.marketcap} "
+  @prices.each.with_index(1) do |currency, i|
+      puts "#{i}. #{currency.name} - #{currency.price} - #{currency.change} - #{currency.volume} - #{currency.circulatingSupply} - #{currency.marketcap} "
     end 
   end 
   
