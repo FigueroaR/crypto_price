@@ -4,7 +4,6 @@ class CryptoPrice::Price
   
   def self.now 
     self.scrape_coinmarketcap
-  
   end 
   
   def self.scrape_coinmarketcap
@@ -14,16 +13,16 @@ class CryptoPrice::Price
   end 
   
   def self.scrape_coinmarketcap
-    doc = Nokogiri::HTML(open(https://coinmarketcap.com))
+    doc = Nokogiri::HTML(open("https://coinmarketcap.com"))
+    binding.pry 
+    #price = self.new 
+    #price.name = 
+    #price.price = 
+    #price.chagen = 
+    #price.volume = 
+    #price.marketcap = 
+    #price.circulatingSupply = 
     
-    price = self.new 
-    price.name = 
-    price.price = 
-    price.chagen = 
-    price.volume = 
-    price.marketcap = 
-    price.circulatingSupply = 
-    
-    price
+    #price
   end 
 end 
