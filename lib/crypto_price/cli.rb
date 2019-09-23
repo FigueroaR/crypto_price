@@ -17,16 +17,16 @@ class CryptoPrice::CLI
     end 
   end 
   
-  def current_price 
-    puts "Cryptocurrenrcy prices Today"
-    puts " "
+  #def current_price 
+    #puts "Cryptocurrenrcy prices Today"
+    #puts " "
    
         
       #@prices = CryptoPrice::Price.now
       #@prices.each.with_index(1) do |currency, i|
           #puts "#{i}. #{currency.name} - #{currency.price} - #{currency.change} - #{currency.volume} - #{currency.circulatingSupply} -     #{currency.marketcap} "
      
-  end 
+  #end 
   
   
   
