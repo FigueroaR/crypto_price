@@ -1,16 +1,21 @@
+
 class CryptoPrice::CLI
   
   def call 
-    puts "Current Crypto-Currencies Prices"
     #current_price
     menu 
     #goodbye 
   end 
   
   def menu
+    puts "================================"
+    puts "Current Crypto-Currencies Prices"
+    puts "================================"
     puts " Search through all Cryptocurrencies and find the information you want! "
+    
+    puts" choose an option:"
     input = gets.strip
-    puts"choose adn option:"
+    #binding.pry
     case input
       
     when "1"

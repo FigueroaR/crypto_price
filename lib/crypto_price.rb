@@ -1,6 +1,6 @@
 #require 'open-uri'
 #require 'nokogiri'
-#require 'pry'
+require 'pry'
 
 
 require_relative "./crypto_price/version"
