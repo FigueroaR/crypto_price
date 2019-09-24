@@ -19,13 +19,18 @@ class CryptoPrice::CLI
     puts "|                       ==================                               |"
     puts "|                        choose an option:                               |"
     puts "|                       ==================                               |"
-    puts " "
-    input = gets.chomp
-    case input
+    puts "  "
+
     
-    when "1"
-      "puts this an option"
-    end 
+    input = gets.chomp
+    while input != "0"
+      puts  "        1. list all coins                          2. search by name   "
+      case input
+      when "1"
+        "    -    puts all the coins here   -     "
+      when "2" 
+        "    -    able to search by name maybe with regex -      "
+      end 
     #binding.pry
   end 
   
