@@ -12,17 +12,17 @@
     #info 
   #end 
   
-  def self.scrape_coinmarketcap
-    doc = Nokogiri::HTML(open("https://coinmarketcap.com"))
+  #def self.scrape_coinmarketcap
+    #doc = Nokogiri::HTML(open("https://coinmarketcap.com"))
     #binding.pry 
     #price = self.new 
-    binding.pry 
-    price.name = css(".currency-name-container")
+    #binding.pry 
+    #price.name = css(".currency-name-container")
     #price.price = 
     #price.chagen = 
     #price.volume = 
     #price.marketcap = 
     #price.circulatingSupply = 
     #price
-  end 
+  #end 
 #end 

@@ -8,16 +8,21 @@ class CryptoPrice::CLI
   end 
   
   def menu
-    puts "================================"
-    puts "Current Crypto-Currencies Prices"
-    puts "================================"
-    puts " Search through all Cryptocurrencies and find the information you want! "
-    
-    puts" choose an option:"
-    input = gets.strip
-    #binding.pry
+    puts "|                 ================================                       |"
+    puts "|                 Current Crypto-Currencies Prices                       |"
+    puts "|                 ================================                       |"
+    puts "|                                                                        |"
+    puts "|========================================================================|"
+    puts "| Search through all Cryptocurrencies and find the information you want! |"
+    puts "|========================================================================|"
+    puts "|                                                                        |"
+    puts "|                       ==================                               |"
+    puts "|                        choose an option:                               |"
+    puts "|                       ==================                               |"
+    puts " "
+    input = gets.chomp
     case input
-      
+    
     when "1"
       "puts this an option"
     end 
