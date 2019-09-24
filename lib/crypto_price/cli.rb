@@ -22,15 +22,16 @@ class CryptoPrice::CLI
     puts "  "
 
     
-    input = gets.chomp
+    input = gets.strip
     
-      case input
-      when "1"
-        puts "    -    puts all the coins here   -     "
-      when "2" 
-        puts "    -    able to search by name maybe with regex -      "
-      end 
-    #binding.pry
+    case input
+      #binding.pry
+    when "1"
+      puts "    -    puts all the coins here   -     "
+    when "2" 
+      puts "    -    able to search by name maybe with regex -      "
+    end 
+    
   end 
   
   #def current_price 
