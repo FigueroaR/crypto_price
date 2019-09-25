@@ -14,9 +14,9 @@ class CryptoPrice::Price
   end 
   
   def self.scrape_coinmarketcap
-    #doc = Nokogiri::HTML(open("https://coinmarketcap.com"))
+    doc = Nokogiri::HTML(open("https://coinmarketcap.com"))
     puts "scraped info here"
-    #binding.pry 
+    binding.pry 
      
     #price = self.new 
     #binding.pry 
