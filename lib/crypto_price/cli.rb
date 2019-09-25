@@ -3,8 +3,9 @@ class CryptoPrice::CLI
   
   def call 
     #current_price
-    menu 
     #individual_price
+    menu 
+    
   end 
   
   def menu
@@ -55,10 +56,16 @@ class CryptoPrice::CLI
         individual_price
         #puts "gets the top coin from list"
       when "2" 
-        #current_price
-        puts "top 50 coins here "
+        current_price
+        #puts "top 50 coins here "
       when "3"
+        5.times do
+          puts " "
+        end
         puts "have a good day" 
+        5.times do
+          puts " "
+        end
       else 
         puts "Try a  valid key" 
       end 
@@ -66,17 +73,32 @@ class CryptoPrice::CLI
   end 
   
   def individual_price
+    5.times do
+      puts " "
+    end
     puts " links ind price"
+    5.times do
+      puts " "
+    end
   end
 
-  #def current_price 
-    #puts "Cryptocurrenrcy prices Today"
-    #puts " "
-     # @prices = CryptoPrice::Price.now
-      #@prices.each.with_index(1) do |currency, i|
-          #puts "#{i}. #{currency.name} - #{currency.price} - #{currency.change} - #{currency.volume} - #{currency.circulatingSupply} -     #{currency.marketcap} "
-     
-  #end
+  def current_price 
+    5.times do
+      puts " "
+    end
+
+    puts "Cryptocurrenrcy prices Today"
+    #binding.pry
+    @prices = CryptoPrice::Price.now
+    
+    #@prices.each.with_index(1) do |currency, i|
+      #puts "#{i}. #{currency.name} - #{currency.price} - #{currency.change} - #{currency.volume} - #{currency.circulatingSupply} -     #{currency.marketcap} "
+    5.times do
+      puts " "
+    end 
+
+    
+  end
   
   
 
