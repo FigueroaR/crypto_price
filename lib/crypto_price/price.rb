@@ -4,17 +4,18 @@ class CryptoPrice::Price
   
   def self.now 
     self.scrape_array
-    binding.pry
+    #binding.pry
   end 
   
   def self.scrape_array
     info = [] 
-    #info << self.scrape_coinmarketcap
-    #info 
+    info << self.scrape_coinmarketcap
+    info 
   end 
   
-  #def self.scrape_coinmarketcap
+  def self.scrape_coinmarketcap
     #doc = Nokogiri::HTML(open("https://coinmarketcap.com"))
+    puts "scraped info here"
     #binding.pry 
      
     #price = self.new 
@@ -26,5 +27,5 @@ class CryptoPrice::Price
     #price.marketcap = 
     #price.circulatingSupply = 
     #price
-  #end 
+  end 
 end 
