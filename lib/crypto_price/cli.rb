@@ -67,7 +67,7 @@ class CryptoPrice::CLI
           puts " "
         end
       else 
-        puts "Try a  valid key" 
+        puts "Try a valid number" 
       end 
     end
   end 
