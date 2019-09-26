@@ -92,7 +92,7 @@ class CryptoPrice::CLI
     @prices = CryptoPrice::Price.now
     
     #@prices.each.with_index(1) do |currency, i|
-      #puts "#{i}. #{currency.name} - #{currency.price} - #{currency.change} - #{currency.volume} - #{currency.circulatingSupply} -     #{currency.marketcap} "
+      #puts "#{i}. #{currency.name} - #{currency.price} - #{currency.change} - #{currency.volume} - #{currency.circulatingSupply} - #{currency.marketcap} "
     5.times do
       puts " "
     end 
