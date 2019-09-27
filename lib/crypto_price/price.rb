@@ -13,7 +13,7 @@ class CryptoPrice::Price
     info 
   end 
   
-  def self.scrape_coinmarketcap
+  def self.scrape_coinbase
     doc = Nokogiri::HTML(open("https://www.coinbase.com/price"))
     coin = self.new  
     coin.name = doc.css("tbody.AssetTable__AssetTableBody-sc-3hlimn-0.bpsIBu div").first.css("h4.Header__StyledHeader-sc-1q6y56a-0").text
