@@ -4,7 +4,6 @@ class CryptoPrice::Price
   
   def self.now 
     self.scrape_array
-    #binding.pry
   end 
   
   def self.scrape_array
