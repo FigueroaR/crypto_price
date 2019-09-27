@@ -23,7 +23,7 @@ class CryptoPrice::Price
     coin.changeSign = doc.css("div.PercentChange__Change-sc-1ukqm0f-0").first.css("span.PercentChange___Symbol-sc-1ukqm0f-1.fHPgbe").text 
     coin.price = doc.css("td.AssetTableRow__Price-sc-1e35vph-5").first.css("h4.Header__StyledHeader-sc-1q6y56a-0").text
     #coin.percent = doc.css("td.AssetTableRow__Price-sc-1e35vph-5").first.css("div.jDVmZV div").text  #first.css("h4.Header__StyledHeader-sc-1q6y56a-0.hZxUBM.TextElement__Spacer-sc-18l8wi5-0.hpeTzd").text 
-    binding.pry
+    #binding.pry
     coin
   end 
 end 

@@ -14,7 +14,7 @@ class CryptoPrice::CLI
       puts "|                 ================================                       |"
       puts "|                                                                        |"
       puts "|========================================================================|"
-      puts "| Search through all Cryptocurrencies and find the information you want! |"
+      puts "|                      Today's top Crypto!                               |"
       puts "|========================================================================|"
       puts "|                                                                        |"
       puts "|                                                                        |"
@@ -23,7 +23,7 @@ class CryptoPrice::CLI
       puts "|                                                                        |"
       puts "|                                                                        |"
       puts "|                                                                        |"
-      puts "|         -  1. Search by name           -  2. top 50                    | "
+      puts "|         -  1. Display top Crypto          -  2. Reload                 | "
       puts "|                                                                        |"
       puts "|                           -  3. exit                                   |"
       puts "|                                                                        |"
@@ -43,7 +43,7 @@ class CryptoPrice::CLI
       puts "|                                                                        |"
       puts "|                                                                        |"
       puts "|                                                                        |"
-      puts "|         -  1. Search by name           -  2. top 50                    | "
+      puts "|         -  1. Display top Crypto          -  2. Reload                 | "
       puts "|                                                                        |"
       puts "|                           -  3. exit                                   |"
       puts "|                                                                        |"
@@ -53,11 +53,9 @@ class CryptoPrice::CLI
       case input
         #binding.pry
       when "1"
-        individual_price
-        #puts "gets the top coin from list"
+        current_price
       when "2" 
         current_price
-        #puts "top 50 coins here "
       when "3"
         5.times do
           puts " "
@@ -67,6 +65,9 @@ class CryptoPrice::CLI
           puts " "
         end
       else 
+        5.times do
+          puts " "
+          end
         puts "Try a valid number" 
       end 
     end
@@ -82,21 +83,22 @@ class CryptoPrice::CLI
     end
   end
 
-  def current_price 
-    5.times do
+  def current_price
+    3.times do
       puts " "
     end
 
     puts "Cryptocurrenrcy prices Today"
-    #binding.pry
-    @prices = CryptoPrice::Price.now
+    puts " "
     
-    #@prices.each.with_index(1) do |currency, i|
-      #puts "#{i}. #{currency.name} - #{currency.price} - #{currency.changeSign}"
+    @prices = CryptoPrice::Price.now
+    @prices.each.with_index(1) do |currency, i|
+      puts "#{i}. #{currency.name} - #{currency.price} - 24h change(#{currency.changeSign})"
+    #binding.pry
 
-    5.times do
+    3.times do
       puts " "
-      end 
+    end
+    end 
   end
 end 
-
