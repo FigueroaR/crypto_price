@@ -21,3 +21,15 @@ class CryptoPrice::Price
     coin
   end 
 end 
+
+
+doc = Nokogiri::HTML(open("https://coinlib.io/coins"))
+  
+  #info = doc.css("div.container")
+  #name = info.css("div.tbl-currency").text
+  #symbol = info.css("span.tbl-coin-abbrev")
+  #price = info.css("span.tbl-price").first.text
+  #volume = info.css("span.mob-info-value")
+  #rank = info.css("span.tbl-rank").text
+  #marketcap = info.css("span.mob-info-value")
+  #binding.pry
