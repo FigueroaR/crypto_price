@@ -76,13 +76,19 @@ class CryptoPrice::CLI
     puts "Cryptocurrenrcy prices Today"
     puts " "
     
-    @prices = CryptoPrice::Price.now
-    @prices.each.with_index(1) do |currency, i|
-      puts "#{i}. #{currency.name} - #{currency.price} - 24h change(#{currency.changeSign})"
+    CryptoPrice::Scraper.scrape_coinlib
+    
+    CryptoPrice::Coin.all.each.with_index(1) do |currency, i|
+      puts "
+   #{i}. Currency Symbol:     #{currency.symbol} 
+        Name:               #{currency.name} 
+        Current Price:      $#{currency.price} 
+        MarketCap:          $#{currency.marketcap}"
     #binding.pry
 
     3.times do
       puts " "
+
       end
     end 
   end
