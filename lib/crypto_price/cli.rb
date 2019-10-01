@@ -80,10 +80,11 @@ class CryptoPrice::CLI
     
     CryptoPrice::Coin.all.each.with_index(1) do |currency, i|
       puts "
-   #{i}. Currency Symbol:     #{currency.symbol} 
-        Name:               #{currency.name} 
-        Current Price:      $#{currency.price} 
-        MarketCap:          $#{currency.marketcap}"
+   #{i}.  Currency Symbol:     #{currency.symbol} 
+         Name:               #{currency.name} 
+         Current Price:      $#{currency.price} 
+         24h Change:         #{currency.change}%
+         MarketCap:          $#{currency.marketcap}"
     #binding.pry
 
     3.times do

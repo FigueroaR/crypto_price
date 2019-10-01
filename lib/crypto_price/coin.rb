@@ -5,7 +5,7 @@ class CryptoPrice::Coin
 
   @@all = []
 
-  def initialize(symbol, name, price, change = nil, marketcap)
+  def initialize(symbol, name, price, change , marketcap)
     @symbol = symbol
     @name = name
     @price = price
