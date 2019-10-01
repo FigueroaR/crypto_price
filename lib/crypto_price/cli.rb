@@ -20,7 +20,7 @@ class CryptoPrice::CLI
         puts "|                                                                        |"
         puts "|                                                                        |"
         puts "|                                                                        |"
-        puts "|         -  1. Display top Crypto          -  2. Reload                 | "
+        puts "|         -  1. Top 10 coins         -  2. Top 50 Coins                  | "
         puts "|                                                                        |"
         puts "|                           -  3. exit                                   |"
         puts "|                                                                        |"
@@ -30,6 +30,7 @@ class CryptoPrice::CLI
         end
     
     input = nil 
+
     while input != "3"
         puts "|========================================================================|"
         puts "|                                                                        |"
@@ -39,7 +40,7 @@ class CryptoPrice::CLI
         puts "|                                                                        |"
         puts "|                                                                        |"
         puts "|                                                                        |"
-        puts "|         -  1. Display top Crypto          -  2. Reload                 | "
+        puts "|         -  1. Top 10 coins         -  2. Top 50 Coins                  | "
         puts "|                                                                        |"
         puts "|                           -  3. exit                                   |"
         puts "|                                                                        |"
@@ -48,14 +49,14 @@ class CryptoPrice::CLI
       input = gets.strip
       case input
       when "1"
-        current_price
+        top_ten
       when "2" 
-        current_price
+        top_fifty
       when "3"
           5.times do
             puts " "
           end
-        puts "have a good day" 
+        puts "Have a good day" 
           5.times do
             puts " "
           end
@@ -77,7 +78,6 @@ class CryptoPrice::CLI
     puts " "
     
     CryptoPrice::Scraper.scrape_coinlib
-    
     CryptoPrice::Coin.all.each.with_index(1) do |currency, i|
       puts "
    #{i}.  Currency Symbol:     #{currency.symbol} 
@@ -93,4 +93,15 @@ class CryptoPrice::CLI
       end
     end 
   end
+
+  def top_ten 
+    current_price.all[1, 10].each do |ten| 
+      puts ten 
+    end
+  end
+  
+  def top_fifty
+    current_price[1, 50]
+  end
+
 end 

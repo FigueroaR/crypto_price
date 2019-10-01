@@ -1,7 +1,7 @@
 class CryptoPrice::Coin
   
   
-  attr_accessor :name, :price, :satoshi, :symbol, :volume, :marketcap, :change
+  attr_accessor :name, :price, :symbol, :volume, :marketcap, :change
 
   @@all = []
 
@@ -17,4 +17,6 @@ class CryptoPrice::Coin
   def self.all
     @@all
   end
+
+  
 end
