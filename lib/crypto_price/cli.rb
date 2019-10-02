@@ -2,6 +2,7 @@
 class CryptoPrice::CLI
   
   def call 
+    CryptoPrice::Scraper.scrape_coinlib
     menu 
   end 
   
@@ -47,11 +48,12 @@ class CryptoPrice::CLI
         puts "|________________________________________________________________________|"
         
       input = gets.strip
+      CryptoPrice::Scraper.scrape_coinlib
       case input
       when "1"
-        top_ten
+        top_ten(CryptoPrice::Coin.all)
       when "2" 
-        top_fifty
+        top_fifty(CryptoPrice::Coin.all)
       when "3"
           5.times do
             puts " "
@@ -77,15 +79,11 @@ class CryptoPrice::CLI
     puts "Cryptocurrenrcy prices Today"
     puts " "
     
-    CryptoPrice::Scraper.scrape_coinlib
     CryptoPrice::Coin.all.each.with_index(1) do |currency, i|
-      puts "
-   #{i}.  Currency Symbol:     #{currency.symbol} 
-         Name:               #{currency.name} 
-         Current Price:      $#{currency.price} 
-         24h Change:         #{currency.change}%
-         MarketCap:          $#{currency.marketcap}"
+    
     #binding.pry
+    
+    individual(i, currency)
 
     3.times do
       puts " "
@@ -94,14 +92,27 @@ class CryptoPrice::CLI
     end 
   end
 
-  def top_ten 
-    current_price.all[1, 10].each do |ten| 
-      puts ten 
+  def individual(i, currency)
+    puts "
+   #{i}.  Currency Symbol:     #{currency.symbol} 
+         Name:               #{currency.name} 
+         Current Price:      $#{currency.price} 
+         24h Change:         #{currency.change}%
+         MarketCap:          $#{currency.marketcap}"
+    
+  end
+
+  def top_ten(info_array)
+    info_array[0, 10].each.with_index do |k, index| 
+      individual(index, k)
     end
+    
   end
   
-  def top_fifty
-    current_price[1, 50]
+  def top_fifty(info_array)
+    info_array[0, 50].each.with_index do |k, index|  #edit this not repeating info
+      individual(index, k)
+    end
   end
 
 end 
