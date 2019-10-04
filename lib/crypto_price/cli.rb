@@ -7,8 +7,6 @@ class CryptoPrice::CLI
   end 
   
   def menu
-
-    
         puts "|                 ================================                       |"
         puts "|                 Current Crypto-Currencies Prices                       |"
         puts "|                 ================================                       |"
@@ -33,8 +31,6 @@ class CryptoPrice::CLI
         end
     
     input = nil 
-    
-    #binding.pry
     while input != "3"
         puts "|========================================================================|"
         puts "|                                                                        |"
@@ -51,7 +47,6 @@ class CryptoPrice::CLI
         puts "|________________________________________________________________________|"
         
       input = gets.strip
-      #method(input)
       CryptoPrice::Scraper.scrape_coinlib
       case input
       when "1"
@@ -61,11 +56,14 @@ class CryptoPrice::CLI
         show_info(input, c)
       when "2" 
         top_fifty(CryptoPrice::Coin.all)
+        input = gets.strip
+        d = CryptoPrice::Coin.all[input.to_i]
+        show_info(input, d)
       when "3"
           5.times do
             puts " "
           end
-        puts "Have a good day" 
+        puts "Have a good day!" 
           5.times do
             puts " "
           end
@@ -112,9 +110,7 @@ class CryptoPrice::CLI
   def top_ten(info_array)
     info_array[0, 10].each.with_index do |k, index| 
       individual(index, k)
-      #show_info(index, k )
     end
-    
   end
   
   def top_fifty(info_array)
