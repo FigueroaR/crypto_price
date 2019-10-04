@@ -1,12 +1,12 @@
 class CryptoPrice::Scraper
-  def self.scrape_coinbase
+  def self.scrape_coinmarketcap
     doc = Nokogiri::HTML(open("https://coinmarketcap.com"))
     doc.css("a.price").text.split("$").select{ |k| k.length > 0  }
   end
 
   def self.scrape_coinlib
     doc = Nokogiri::HTML(open("https://coinlib.io/coins"))
-    prices = self.scrape_coinbase
+    prices = self.scrape_coinmarketcap
     names = doc.css("div.tbl-currency").text.split("\n").select{ |k| !k.include?("[") && k.length > 0  }
     symbols = doc.css("span.tbl-coin-abbrev").text.gsub("]", "").split("[").select{ |k| k.length > 0  }
     changes = doc.css("span.tbl-price.pr-change").text.split("%").select{ |k| k.length > 0  }
