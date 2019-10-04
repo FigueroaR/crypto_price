@@ -2,11 +2,13 @@
 class CryptoPrice::CLI
   
   def call 
-    CryptoPrice::Scraper.scrape_coinlib
+    
     menu 
   end 
   
   def menu
+
+    
         puts "|                 ================================                       |"
         puts "|                 Current Crypto-Currencies Prices                       |"
         puts "|                 ================================                       |"
@@ -31,7 +33,8 @@ class CryptoPrice::CLI
         end
     
     input = nil 
-
+    
+    #binding.pry
     while input != "3"
         puts "|========================================================================|"
         puts "|                                                                        |"
@@ -48,10 +51,14 @@ class CryptoPrice::CLI
         puts "|________________________________________________________________________|"
         
       input = gets.strip
+      #method(input)
       CryptoPrice::Scraper.scrape_coinlib
       case input
       when "1"
         top_ten(CryptoPrice::Coin.all)
+        input = gets.strip
+        c = CryptoPrice::Coin.all[input.to_i]
+        show_info(input, c)
       when "2" 
         top_fifty(CryptoPrice::Coin.all)
       when "3"
@@ -71,40 +78,41 @@ class CryptoPrice::CLI
     end
   end 
 
-  def current_price
-    3.times do
+  def individual(index, coin)
+    2.times do
       puts " "
-    end
-
-    puts "Cryptocurrenrcy prices Today"
-    puts " "
-    
-    CryptoPrice::Coin.all.each.with_index(1) do |currency, i|
-    
-    #binding.pry
-    
-    individual(i, currency)
-
-    3.times do
-      puts " "
-
       end
-    end 
+    puts "
+           
+    #{index}. Symbol:    #{coin.symbol} 
+         Name:    #{coin.name} "
+    2.times do
+      puts " "
+      end
   end
 
-  def individual(i, currency)
-    puts "
-   #{i}.  Currency Symbol:     #{currency.symbol} 
-         Name:               #{currency.name} 
-         Current Price:      $#{currency.price} 
-         24h Change:         #{currency.change}%
-         MarketCap:          $#{currency.marketcap}"
-    
+  def show_info(index, coin)
+    2.times do
+      puts " "
+      end
+    puts "----------------------------------------------------------------"
+    puts "                You chose:     #{index}         "
+    puts "              
+                               Name:     #{coin.name} 
+                    Currency Symbol:     #{coin.symbol}
+                      Current Price:     $#{coin.price} 
+                         24h Change:     #{coin.change}%
+                          MarketCap:     $#{coin.marketcap}"
+    puts "----------------------------------------------------------------"                      
+    2.times do
+            puts " "
+            end                      
   end
 
   def top_ten(info_array)
     info_array[0, 10].each.with_index do |k, index| 
       individual(index, k)
+      #show_info(index, k )
     end
     
   end

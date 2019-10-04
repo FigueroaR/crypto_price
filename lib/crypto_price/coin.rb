@@ -19,4 +19,6 @@ class CryptoPrice::Coin
   end
 
   
+
+  
 end
