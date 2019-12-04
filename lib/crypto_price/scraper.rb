@@ -1,7 +1,10 @@
 class CryptoPrice::Scraper
   def self.scrape_coinmarketcap
-    doc = Nokogiri::HTML(open("https://coinmarketcap.com"))
-    doc.css("a.price").text.split("$").select{ |k| k.length > 0  }
+    #binding.pry
+    #doc = Nokogiri::HTML(open("https://coinmarketcap.com"))
+    #doc.css("tbody.span").text.split("$").select{ |k| k.length > 0  }
+    doc = Nokogiri::HTML(open("https://coinstats.app/?pagesize=50&page=1"))
+    doc.css("td.data-cell.mobile-last").text.split("$").select{ |k| k.length > 0  }
   end
 
   def self.scrape_coinlib

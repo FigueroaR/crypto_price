@@ -13,25 +13,9 @@ class CryptoPrice::CLI
         puts "|                                                                        |"
         puts "|========================================================================|"
         puts "|                      Today's top Crypto!                               |"
-        puts "|========================================================================|"
-        puts "|                                                                        |"
-        puts "|                                                                        |"
-        puts "|                     Choose an option Number:                           |"
-        puts "|                       ___________________                              |"
-        puts "|                                                                        |"
-        puts "|                                                                        |"
-        puts "|                                                                        |"
-        puts "|         -  1. Top 10 coins         -  2. Top 50 Coins                  | "
-        puts "|                                                                        |"
-        puts "|                           -  3. exit                                   |"
-        puts "|                                                                        |"
-        puts "|________________________________________________________________________|"
-        5.times do
-          puts " "
-        end
     
     input = nil 
-    while input != "3"
+    while input != "exit"
         puts "|========================================================================|"
         puts "|                                                                        |"
         puts "|                                                                        |"
@@ -59,7 +43,7 @@ class CryptoPrice::CLI
         input = gets.strip
         d = CryptoPrice::Coin.all[input.to_i]
         show_info(input, d)
-      when "3"
+      when "exit"
           5.times do
             puts " "
           end
@@ -71,7 +55,7 @@ class CryptoPrice::CLI
           5.times do
             puts " "
             end
-        puts "Try a valid number" 
+        puts "Type 'Exit' when you are done!" 
       end 
     end
   end 
