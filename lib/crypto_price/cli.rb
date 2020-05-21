@@ -24,14 +24,14 @@ class CryptoPrice::CLI
         puts "|                                                                        |"
         puts "|                     Choose an option Number:                           |"
         puts "|                                                                        |"
-        puts "|                       when done press 'x'                              |"
+        puts "|                      when done type 'exit'                             |"
         puts "|                       ___________________                              |"
         puts "|                                                                        |"
         puts "|                                                                        |"
         puts "|                                                                        |"
         puts "|         -  1. Top 10 coins         -  2. Top 50 Coins                  | "
         puts "|                                                                        |"
-        puts "|                              - x                                       |"
+        puts "|                                                                        |"
         puts "|                                                                        |"
         puts "|________________________________________________________________________|"
         5.times do
@@ -51,7 +51,7 @@ class CryptoPrice::CLI
           input = gets.strip
           d = CryptoPrice::Coin.all[input.to_i]
           show_info(input, d)
-        when "x"
+        when "exit"
             5.times do
               puts " "
             end
@@ -63,7 +63,7 @@ class CryptoPrice::CLI
             5.times do
               puts " "
               end
-          puts "Type 'x' when you are done!" 
+          puts "Type 'exit' when you are done!" 
             5.times do
               puts " "
               end
