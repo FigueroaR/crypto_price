@@ -34,7 +34,7 @@ class CryptoPrice::CLI
         puts "|                                                                        |"
         puts "|                                                                        |"
         puts "|________________________________________________________________________|"
-        5.times do
+        3.times do
           puts " "
           end
         

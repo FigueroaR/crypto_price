@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "bundler", "~> 2.0"
   spec.add_dependency "rake", "~> 13.0"
   spec.add_dependency "rspec", "~> 3.0"
-  #spec.add_dependency "pry"
+  spec.add_dependency "pry"
 
   spec.add_dependency "nokogiri"
 end
