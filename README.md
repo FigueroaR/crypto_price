@@ -42,10 +42,3 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 Everyone interacting in the CryptoPrice project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/FigueroaR/crypto_price/blob/master/CODE_OF_CONDUCT.md).
 
-
-<!-- names = doc.css("tbody tr td[3]").text.gsub(" ", "").split("\n").select{|k| k.length > 0}
-  symbols = doc.css("tbody tr td[4]").text.gsub(" ", "").split("\n").select{|k| k.length > 0}
-  prices = doc.css("tbody tr td[5]").text.gsub(" ", "").split("\n").select{|k| k.length > 0}
-  changes = doc.css("tbody tr td[6]").text.gsub(" ", "").split("\n")
-  marketcaps = doc.css("tbody tr td[6]").text.gsub(" ", "").split("\n")
-  doc = Nokogiri::HTML(open("https://coindataflow.com/en")) -->
