@@ -7,10 +7,10 @@ Gem::Specification.new do |spec|
   spec.name          = "crypto_price"
   spec.version       = CryptoPrice::VERSION
   spec.authors       = ["Raul Figueroa"]
-  spec.email         = ["raul.a.figueroa@hotmail.com"]
+  spec.email         = ["raul.a.figueroaa@gmail.com"]
 
-  spec.summary       = %q{View Current Crypto Price.}
-  spec.description   = %q{Scrapped Information on Crypto Price.}
+  spec.summary       = %q{View current Crypto prices on demand.}
+  spec.description   = %q{Scrapped Information on Crypto Prices.}
   spec.homepage      = "https://github.com/FigueroaR/crypto_price"
   spec.license       = "MIT"
   

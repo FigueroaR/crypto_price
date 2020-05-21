@@ -5,8 +5,11 @@ class CryptoPrice::Scraper
   #   #doc.css("tbody.span").text.split("$").select{ |k| k.length > 0  }
   #   doc = Nokogiri::HTML(open("https://coinstats.app/?pagesize=50&page=1"))
   #   doc.css("td.data-cell.mobile-last").text.split("$").select{ |k| k.length > 0  }
-  # end  
+  # end
+  
+  
 
+  # https://coindataflow.com/en seems to have a well designed fornt end with strcutured html and css
   def self.scrape_coins
     #binding.pry
     doc = Nokogiri::HTML(open("https://coindataflow.com/en"))
