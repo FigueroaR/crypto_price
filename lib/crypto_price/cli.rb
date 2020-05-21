@@ -7,10 +7,13 @@ class CryptoPrice::CLI
   end 
   
   def menu
-        puts "|                 ================================                       |"
-        puts "|                 Current Crypto-Currencies Prices                       |"
-        puts "|                 ================================                       |"
-        puts "|                                                                        |"
+        5.times do
+            puts " "
+        end
+        puts "                 ================================                        "
+        puts "                 Current Crypto-Currencies Prices                        "
+        puts "                 ================================                         "
+        puts "                                                                         "
         puts "|========================================================================|"
         puts "|                      Today's top Crypto!                               |"
     
@@ -20,43 +23,51 @@ class CryptoPrice::CLI
         puts "|                                                                        |"
         puts "|                                                                        |"
         puts "|                     Choose an option Number:                           |"
+        puts "|                                                                        |"
+        puts "|                       when done press 'x'                              |"
         puts "|                       ___________________                              |"
         puts "|                                                                        |"
         puts "|                                                                        |"
         puts "|                                                                        |"
         puts "|         -  1. Top 10 coins         -  2. Top 50 Coins                  | "
         puts "|                                                                        |"
-        puts "|                           -  3. exit                                   |"
+        puts "|                              - x                                       |"
         puts "|                                                                        |"
         puts "|________________________________________________________________________|"
+        5.times do
+          puts " "
+          end
         
       input = gets.strip
-      CryptoPrice::Scraper.scrape_coinlib
+      CryptoPrice::Scraper.scrape_coins
       case input
-      when "1"
-        top_ten(CryptoPrice::Coin.all)
-        input = gets.strip
-        c = CryptoPrice::Coin.all[input.to_i]
-        show_info(input, c)
-      when "2" 
-        top_fifty(CryptoPrice::Coin.all)
-        input = gets.strip
-        d = CryptoPrice::Coin.all[input.to_i]
-        show_info(input, d)
-      when "exit"
-          5.times do
-            puts " "
-          end
-        puts "Have a good day!" 
-          5.times do
-            puts " "
-          end
-      else 
-          5.times do
-            puts " "
+        when "1"
+          top_ten(CryptoPrice::Coin.all)
+          input = gets.strip
+          c = CryptoPrice::Coin.all[input.to_i]
+          show_info(input, c)
+        when "2" 
+          top_fifty(CryptoPrice::Coin.all)
+          input = gets.strip
+          d = CryptoPrice::Coin.all[input.to_i]
+          show_info(input, d)
+        when "x"
+            5.times do
+              puts " "
             end
-        puts "Type 'Exit' when you are done!" 
-      end 
+          puts "Have a good day!" 
+            5.times do
+              puts " "
+            end
+        else 
+            5.times do
+              puts " "
+              end
+          puts "Type 'x' when you are done!" 
+            5.times do
+              puts " "
+              end
+        end 
     end
   end 
 
@@ -77,15 +88,17 @@ class CryptoPrice::CLI
     2.times do
       puts " "
       end
-    puts "----------------------------------------------------------------"
-    puts "                You chose:     #{index}         "
+    puts "   ----------------------------------------------------------------"
+    puts "                                                                "
+    puts "                   You chose:     #{index}         "
     puts "              
-                               Name:     #{coin.name} 
-                    Currency Symbol:     #{coin.symbol}
-                      Current Price:     $#{coin.price} 
-                         24h Change:     #{coin.change}%
-                          MarketCap:     $#{coin.marketcap}"
-    puts "----------------------------------------------------------------"                      
+                                  Name:     #{coin.name} 
+                       Currency Symbol:     #{coin.symbol}
+                         Current Price:     #{coin.price} 
+                            24h Change:     #{coin.change}%
+                             MarketCap:     #{coin.marketcap}"
+    puts "                                                                "
+    puts "   ----------------------------------------------------------------"                      
     2.times do
             puts " "
             end                      
