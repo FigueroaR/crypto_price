@@ -51,7 +51,7 @@ class CryptoPrice::CLI
           input = gets.strip
           d = CryptoPrice::Coin.all[input.to_i]
           show_info(input, d)
-        when "exit"
+        when "x"
             5.times do
               puts " "
             end

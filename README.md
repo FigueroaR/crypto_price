@@ -2,7 +2,7 @@
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/crypto_price`. To experiment with that code, run `./bin/crypto_price` (executable permission) for an interactive prompt.
 
-Video: https://www.youtube.com/watch?v=vbwYG5sNj64"
+Video: https://youtu.be/osbpEoAwHoA
 
 ## Installation
 
