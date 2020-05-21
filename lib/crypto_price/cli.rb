@@ -18,13 +18,13 @@ class CryptoPrice::CLI
         puts "|                      Today's top Crypto!                               |"
     
     input = nil 
-    while input != "exit"
+    while input != "x"
         puts "|========================================================================|"
         puts "|                                                                        |"
         puts "|                                                                        |"
         puts "|                     Choose an option Number:                           |"
         puts "|                                                                        |"
-        puts "|                      when done type 'exit'                             |"
+        puts "|                        when done type 'x'                              |"
         puts "|                       ___________________                              |"
         puts "|                                                                        |"
         puts "|                                                                        |"
@@ -63,7 +63,7 @@ class CryptoPrice::CLI
             5.times do
               puts " "
               end
-          puts "Type 'exit' when you are done!" 
+          puts "Type 'x' when you are done!" 
             5.times do
               puts " "
               end
