@@ -11,11 +11,12 @@ class CryptoPrice::Scraper
 
   # https://coindataflow.com/en seems to have a well designed fornt end with strcutured html and css
   def self.scrape_coins
-    #binding.pry
+    
     doc = Nokogiri::HTML(open("https://coindataflow.com/en"))
-    names = doc.css("tbody tr td[3]").text.gsub(" ", "").split("\n").select{|k| k.length > 0}
+    names = doc.css("tbody tr td[2]").text.gsub(" ", "").split("\n").select{|k| k.length > 0}
+    #binding.pry
     symbols = doc.css("tbody tr td[4]").text.gsub(" ", "").split("\n").select{|k| k.length > 0}
-    prices = doc.css("tbody tr td[5]").text.gsub(" ", "").split("\n").select{|k| k.length > 0}
+    prices = doc.css("tbody tr td[4]").text.gsub(" ", "").split("\n").select{|k| k.length > 0}
     changes = doc.css("tbody tr td[6]").text.gsub(" ", "").split("\n").select{|k| k.length > 0}
     marketcaps = doc.css("tbody tr td[12]").text.gsub(" ", "").split("\n").select{|k| k.length > 0}
     
